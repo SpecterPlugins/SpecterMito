@@ -1,0 +1,76 @@
+# SpecterMito
+# Version-Type: LITE
+# Author-Official: MisterSevent
+# WebSite: https://specterplugins.com
+# GitHub: https://github.com/SpecterPlugins
+# Discord: https://discord.gg/9MgtdPrWYc
+
+Mito_Atual: ''
+Tag: '&5[Mito] '
+
+Config:
+  #Quantas vezes o mito tera que morrer de CAUSAS DESCONHECIDAS, para sortear!
+  QuantityNecessaryMitoDeath: 3
+  minimumPlayersRandom: 1
+  Ray:
+    Active: true
+    Quantity: 1
+  spawnBats:
+    Active: true
+    Quantity: 5
+
+NPC:
+  Spawned: "&5&lMITO! &aNpc setado com sucesso!"
+  Removed: "&5&lMITO! &aNpc removido com sucesso!"
+  Hologram:
+    Height: 3.1
+    Holo:
+      - "&5&lMITO"
+      - "&7Mito Atual &f{player}&7."
+
+messages:
+  MitoInexistent: '&5&lMITO! &cMito invalid or nonexistent'
+  MitoActually: '&5&lMITO! &aMito is the player &f{player}'
+  argsSetIncorret: '&5&lMITO! &cUsage: /mito set <random/player>!'
+  no-permission: '&5&lMITO! &cYou cannot have permission to execute this command!'
+  minimumPlayersInvalid: '&5&lMITO! &cYou don''t have enough online players to run!'
+  player-invalid: '&5&lMITO! &cPlayer invalid or nonexistent!'
+  already-mito: '&5&lMITO! &f{player} &calready mito of pvp!'
+  reloaded: '&5&lMITO! &aReloaded sucessful'
+  Broadcast:
+    Active: true
+    Message-Set:
+      - ''
+      - '&5&lMITO! &aPlayer &f{player} &anow is the new mito of pvp!'
+      - ''
+    Message-Killed:
+      - ''
+      - '&5&lMITO! &aPlayer &f{player} &akilled &f{killed} &anow is the new mito of
+      pvp!'
+      - ''
+  Title:
+    Active: true
+    Message: '&f{player} <nl> &anow is the new mito of pvp!'
+  Action-Bar:
+    Active: true
+    Message-Killed: '&5&lMITO! &aPlayer &f{player} &akilled &f{killed} &anow is the
+      new mito of pvp!'
+    Message-NewMito: '&5&lMITO! &aPlayer &f{player} &anow is the new mito of pvp!'
+
+Events:
+  Broadcast:
+    Active: true
+    Message_Join:
+      - ''
+      - '&5&lMITO! &f{player} &ajoin the server!'
+      - ''
+    Message_Exited:
+      - ''
+      - '&5&lMITO! &f{player} &cexited the server!'
+      - ''
+  Action-Bar:
+    Active: true
+    Message_Join: "&5&lMITO! &f{player} &ajoin the server!"
+    Message_Exited: "&5&lMITO! &f{player} &cexited the server!"
+
+Mito_Local: null

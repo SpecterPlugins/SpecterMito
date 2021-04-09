@@ -1,0 +1,86 @@
+plugins {
+    id 'java'
+
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
+}
+
+group = 'com.specter'
+version = '1.0.0'
+
+
+tasks.build.dependsOn('shadowJar')
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+
+    maven { url = 'https://repo.codemc.org/repository/maven-public' }
+    maven { url = 'https://repo.citizensnpcs.co/' }
+
+    maven { url = 'https://jitpack.io/' }
+
+
+}
+
+dependencies {
+
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'com.github.PlaceholderAPI:PlaceholderAPI:2.10.9'
+    compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.0'
+    compileOnly 'net.citizensnpcs:citizens:2.0.27-SNAPSHOT'
+
+    compileClasspath files('libs/LegendChat.jar')
+    compileClasspath files('libs/nChat.jar')
+    compileClasspath files('libs/UltimateChat.jar')
+    compileClasspath files('libs/PaperSpigot.jar')
+
+    implementation "org.bstats:bstats-bukkit:1.8"
+
+    def lombok = "org.projectlombok:lombok:1.18.16"
+    compileOnly lombok
+    annotationProcessor lombok
+}
+
+bukkit {
+
+    main = 'com.specter.spectermito.SpecterMito'
+    authors = ['MisterSevent', 'Dust', 'Lightzz', 'Sc4r']
+    website = 'https://specterplugins.com'
+    version = "${project.version}"
+    description = 'A Lite plugin of mito!'
+    softDepend = ['Legendchat', 'PlaceholderAPI', 'OpenChat', 'UltimateChat']
+    depend = ['Citizens', 'HolograpichDisplay']
+    commands {
+        mito {
+
+            description = 'Plugin de mito'
+
+        }
+    }
+
+}
+
+
+shadowJar {
+
+    archiveName("${project.name}-${project.version}-LITE.jar")
+    relocate 'org.bstats', 'com.specter.spectermito.libs.bstats'
+}
+
+compileJava {
+    options.encoding = "UTF-8"
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
