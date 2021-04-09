@@ -44,3 +44,11 @@ As dependências de desenvolvimento serão baixadas automáticamente quando o pl
 **APIs e Frameworks**
 
 -   Nenhuma
+
+---
+
+
+<p align="center"><img style="border-radius: 100px" src="https://avatars.githubusercontent.com/u/81658128?s=92&v=4"  /></p>
+<p align="center">
+  Copyright © 2021-present, <b>MisterSevent<b>.
+</p>
